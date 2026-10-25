@@ -1,0 +1,48 @@
+body {
+  background-color: #2A2A2A;
+  color: #EBDBB2;
+  font-family: monospace;
+  max-width: 650px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+h1, h2, h3, strong {
+  color: #689D6A;
+}
+
+a {
+  color: #689D6A;
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+form, .card {
+  border: 1px solid #689D6A;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.grid {
+  display: flex;
+  gap: 1rem;
+}
+
+.grid .card {
+  flex: 1;
+}
+
+input, button {
+  background: #2A2A2A;
+  color: #EBDBB2;
+  border: 1px solid #689D6A;
+  padding: 0.5rem;
+  font-family: inherit;
+}
+
+button {
+  background: #689D6A;
+  color: #2A2A2A;
+  font-weight: bold;
+  cursor: pointer;
+}

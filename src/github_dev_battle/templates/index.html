@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GitHub Dev Battle</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+  </head>
+<body>
+  <nav>
+    <a href="/">Arena</a>
+    <a href="/history">History</a>
+  </nav>
+
+  <h1>GitHub Dev Battle</h1>
+
+  <form action="/battle" method="post">
+    <input type="text" name="user1" placeholder="GitHub User 1" required>
+    <input type="text" name="user2" placeholder="GitHub User 2" required>
+    <button type="submit">Fight</button>
+  </form>
+
+  {% if error_msg %}
+    <div class="card">
+      {{ error_msg }}
+    </div>
+  {% endif %}
+
+    {% if battle %}
+    <h2>Winner: {{ battle["winner"]["username"] }}</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>{{ battle["user1"]["username"] }}</h3>
+        <p>Followers: {{ battle["user1"]["followers"] }}</p>
+        <p>Public Repos: {{ battle["user1"]["repos"] }}</p>
+        <p>Total Stars: {{ battle["user1"]["stars"] }}</p>
+        <p>Top Language: {{ battle["user1"]["top_lang"] }}</p>
+        <p><strong>Score: {{ battle["user1"]["score"] }}</strong></p>
+      </div>
+
+      <div class="card">
+        <h3>{{ battle["user2"]["username"] }}</h3>
+        <p>Followers: {{ battle["user2"]["followers"] }}</p>
+        <p>Public Repos: {{ battle["user2"]["repos"] }}</p>
+        <p>Total Stars: {{ battle["user2"]["stars"] }}</p>
+        <p>Top Language: {{ battle["user2"]["top_lang"] }}</p>
+        <p><strong>Score: {{ battle["user2"]["score"] }}</strong></p>
+      </div>
+    </div>
+    {% endif %}
+</body>
+</html>
