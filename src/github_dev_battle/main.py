@@ -19,9 +19,10 @@ app.mount(
 battles = []
 
 
-@app.get("/clear")
+@app.post("/clear")
 def clear():
     battles.clear()
+    return RedirectResponse(url="/history", status_code=303)
 
 
 @app.get("/history")
