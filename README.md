@@ -7,7 +7,7 @@ Some funky app where you can compare GitHub users.
 * Python 3.14+
 * [uv](https://docs.astral.sh/uv/) (will handle `fastapi`, `httpx`, and `jinja2` for you)
 
-## TO USE
+## HOW TO USE
 
 First, sync the dependencies:
 
